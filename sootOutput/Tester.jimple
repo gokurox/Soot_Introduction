@@ -1,0 +1,128 @@
+public class Tester extends java.lang.Object
+{
+    int FIELD1;
+    int FIELD2;
+    java.lang.String FIELD3;
+    double FIELD4;
+
+    public void <init>()
+    {
+        Tester this;
+
+        this := @this: Tester;
+        specialinvoke this.<java.lang.Object: void <init>()>();
+        return;
+    }
+
+    public static int happy(int, int)
+    {
+        int n, q, num, count, j, t, $i0;
+        boolean status;
+        Tester tester, $r3;
+        java.lang.NegativeArraySizeException e, $r4;
+        byte n, $b1;
+        java.io.PrintStream $r0;
+        java.lang.StringBuilder $r1;
+        java.lang.String $r2;
+        double $d0, $d1;
+        java.io.IOException $r5, e;
+
+        n := @parameter0: int;
+        q := @parameter1: int;
+        status = 1;
+        num = 3;
+        n = 10;
+        if n < 1 goto label0;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+        $r1 = new java.lang.StringBuilder;
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("First ");
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(n);
+        $r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(" happy numbers are :-");
+        $r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>();
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>($r2);
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r0.<java.io.PrintStream: void println(int)>(2);
+
+     label0:
+        count = 2;
+        goto label7;
+
+     label1:
+        j = 2;
+        goto label4;
+
+     label2:
+        $i0 = num % j;
+        if $i0 != 0 goto label3;
+
+        status = 0;
+        goto label5;
+
+     label3:
+        j = j + 1;
+
+     label4:
+        $d0 = (double) j;
+        $d1 = (double) num;
+        $d1 = staticinvoke <java.lang.Math: double sqrt(double)>($d1);
+        $b1 = $d0 cmpg $d1;
+        if $b1 <= 0 goto label2;
+
+     label5:
+        if status == 0 goto label6;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r0.<java.io.PrintStream: void println(int)>(num);
+        count = count + 1;
+
+     label6:
+        status = 1;
+        num = num + 1;
+
+     label7:
+        if count <= n goto label1;
+
+        t = staticinvoke <Tester: int happy(int,int)>(2, 3);
+        $r3 = new Tester;
+        specialinvoke $r3.<Tester: void <init>()>();
+        tester = $r3;
+
+     label8:
+        virtualinvoke tester.<Tester: void hellofunc()>();
+
+     label9:
+        goto label12;
+
+     label10:
+        $r4 := @caughtexception;
+        e = $r4;
+        virtualinvoke e.<java.lang.NegativeArraySizeException: void printStackTrace()>();
+        goto label12;
+
+     label11:
+        $r5 := @caughtexception;
+        e = $r5;
+        virtualinvoke e.<java.io.IOException: void printStackTrace()>();
+
+     label12:
+        t = t * t;
+        return 0;
+
+        catch java.lang.NegativeArraySizeException from label8 to label9 with label10;
+        catch java.io.IOException from label8 to label9 with label11;
+    }
+
+    void hellofunc() throws java.io.IOException, java.lang.NegativeArraySizeException
+    {
+        Tester this;
+        java.io.PrintStream $r0;
+        byte var;
+
+        this := @this: Tester;
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+        virtualinvoke $r0.<java.io.PrintStream: void print(java.lang.String)>("Hello");
+        var = 18;
+        return;
+    }
+}
